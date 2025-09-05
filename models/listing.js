@@ -7,12 +7,12 @@ const listingSchema= new Schema({
         required:true,
     },
     description:String,
-//    image: {
-//     type: String,
-// //     default: "https://unsplash.com/photos/a-butterfly-rests-on-a-pink-flower-OTAojt0y3-c",
-//     set: (v) =>
-//         v === "" ? "https://unsplash.com/photos/a-butterfly-rests-on-a-pink-flower-OTAojt0y3-c" : v,
-// },
+   image: {
+    type: String,
+    default: "https://unsplash.com/photos/palm-trees-silhouetted-against-a-golden-ocean-sunset-l4i5j3NU1M0",
+    set: (v) =>
+        v === "" ? "https://unsplash.com/photos/silhouette-of-person-holding-staff-against-sunset-over-ocean-sXe-WIguxA0" : v,
+},
     price:Number,
     location:String,
     country:String,
