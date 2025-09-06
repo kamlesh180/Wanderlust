@@ -9,9 +9,9 @@ const listingSchema= new Schema({
     description:String,
    image: {
     type: String,
-    default: "https://unsplash.com/photos/palm-trees-silhouetted-against-a-golden-ocean-sunset-l4i5j3NU1M0",
+    default: "https://media.istockphoto.com/id/1127245421/photo/woman-hands-praying-for-blessing-from-god-on-sunset-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=Fbysb-YHuALb_Jyi4Q8Lw2QEVIFa3WSaPsvneGr7Q_8=",
     set: (v) =>
-        v === "" ? "https://unsplash.com/photos/silhouette-of-person-holding-staff-against-sunset-over-ocean-sXe-WIguxA0" : v,
+        v === "" ? "https://media.istockphoto.com/id/1127245421/photo/woman-hands-praying-for-blessing-from-god-on-sunset-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=Fbysb-YHuALb_Jyi4Q8Lw2QEVIFa3WSaPsvneGr7Q_8=" : v,
 },
     price:Number,
     location:String,
