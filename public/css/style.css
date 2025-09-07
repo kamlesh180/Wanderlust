@@ -84,8 +84,10 @@ impor .card-body {
 }
 .edit-btn{
   background-color: red !important;
-  border: none;
+  border: none !important;
 }
+
+/* show page */
 .show-img{
   height: 30vh;
 }
