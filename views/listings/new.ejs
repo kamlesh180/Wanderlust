@@ -4,10 +4,11 @@
             <br>
             <h3>Create a New Listing</h3>
 
-            <form method="POST" action="/listings">
+            <form method="POST" action="/listings" noalidate class="needs-validation">
                 <div class="mb-3">
                     <lable for="title" class="form-label"> Title</lable>
-                    <input name="listing[title]" placeholder="add a catchy file" type="text" class="form-control" />
+                    <input name="listing[title]" placeholder="add a catchy file" type="text" class="form-control"
+                        required />
                 </div>
 
                 <div class="mb-3">
@@ -19,21 +20,23 @@
                     <lable for="image" class="form-label"> Image Link</lable>
                     <textarea name="listing[image]" placeholder="enter image URL/Link" class="form-control"></textarea>
                 </div>
+
                 <div class="row">
                     <div class="mb-3 col-md-4">
                         <lable for="price" class="form-label"> Price</lable>
-                        <input name="listing[price]" placeholder="1200" type="text" class="form-control" />
+                        <input name="listing[price]" placeholder="1200" type="text" class="form-control" required />
                     </div>
 
                     <div class="mb-3 col-md-8">
                         <lable for="country" class="form-label"> Country</lable>
-                        <input name="listing[country]" placeholder="India" type="text" class="form-control" />
+                        <input name="listing[country]" placeholder="India" type="text" class="form-control" required />
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <lable for="location" class="form-label"> Location</lable>
-                    <input name="listing[location]" placeholder="U.P , Delhi" type="text" class="form-control" />
+                    <input name="listing[location]" placeholder="U.P , Delhi" type="text" class="form-control"
+                        required />
                 </div>
 
                 <br>
