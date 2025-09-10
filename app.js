@@ -75,24 +75,7 @@ app.delete("/listings/:id",async(req,res) => {
     console.log(deleteListing);
     res.redirect("/listings");
 });
-//     const  allListings = await Listing.find("views");
-//     res.render("/listing/index.ejs",{allListing});
-//     try{
-//     let sampleListing =new Listing({
-//         title:"My New Villa ",
-//         description:"By the beach",
-//         price:1200,
-//         location:"Calangute,Goa",
-//         country:"India"
-//     });
-//     await sampleListing.save();
-//     console.log("sample was saved");
-//     res.send("successful testing");
-//     } catch (err) {
-//         console.log(err);
-//         res.status(400).send(err.message);
-//     }
-// });
+
 app.listen(8080,()=> {
     console.log("server is listeing to port 8080");
 });

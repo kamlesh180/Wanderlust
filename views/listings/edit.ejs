@@ -3,41 +3,60 @@
         <div class="col-8 offset-2">
             <h3>Edit Your Listing</h3>
 
-            <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+            <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation">
+
                 <div class="mb-3">
-                    <lable for="title" class="form-label"> Title</lable>
-                    <input name="listing[title]" value="<%= listing.title %>" type="text" class="form-control" />
+                    <label for="title" class="form-label"> Title</label>
+                    <input name="listing[title]" value="<%= listing.title %>" type="text" class="form-control"
+                        required />
+                    <div class="invalid-feedback">
+                        Please enter a valid title
+                    </div>
                 </div>
 
                 <div class="mb-3">
-                    <lable for="description" class="form-label"> Description</lable>
-                    <textarea name="listing[description]" class="form-control"> <%=listing.description%>
+                    <label for="description" class="form-label"> Description</label>
+                    <textarea name="listing[description]" type="text" class="form-control" required><%= listing.description %>
                          </textarea>
+                    <div class="invalid-feedback">
+                        Please enter a short description
+                    </div>
                 </div>
 
                 <div class="mb-3">
-                    <lable for="image" class="form-label"> Image Link</lable>
-                    <textarea name="listing[image]" class="form-control"> "<%= listing.image%>"</textarea>
+                    <label for="image" class="form-label"> Image Link</label>
+                    <input type="text" name="listing[image]" value="<%= listing.image%>" type="text"
+                        class="form-control" required />
+                    <div class="invalid-feedback">
+                        Image link should be valid!
+                    </div>
                 </div>
                 <div class="row">
                     <div class="mb-3 col-md-4">
-                        <lable for="price" class="form-label"> Price</lable>
-                        <input name="listing[price]" value="<%= listing.price%>" type="number" class="form-control" />
+                        <label for="price" class="form-label"> Price</label>
+                        <input name="listing[price]" value="<%= listing.price%>" type="number" class="form-control"
+                            required />
+                        <div class="invalid-feedback">
+                            Please enter a valid Price
+                        </div>
                     </div>
 
                     <div class="mb-3 col-md-8">
-                        <lable for="country" class="form-label"> Country</lable>
-                        <input name="listing[country]" value="<%= listing.country%>" type="text" class="form-control" />
+                        <label for="country" class="form-label"> Country</label>
+                        <input name="listing[country]" value="<%= listing.country%>" type="text" class="form-control"
+                            required />
+                        <div class="invalid-feedback">
+                            Please enter the Country name
+                        </div>
                     </div>
-                </div>
+                    <input name="listing[location]" value="<%= listing.location %>" type="text" class="form-control"
+                        required />
+                    <div class="invalid-feedback">Please enter the location</div>
 
-                <div class="mb-3">
-                    <lable for="location" class="form-label"> Location</lable>
-                    <input name="listing[location]" value="<%= listing.location%>" type="text" class="form-control" />
-                </div>
-
-                <br>
-                <button class="btn btn-dark edit-btn mt-3">Add</button>
-
-                <script src="/js/script.js"></script>
-                <br><br />
+                    <br>
+                    <button class="btn btn-dark edit-btn mt-3">Add</button>
+            </form>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+    <br><br />

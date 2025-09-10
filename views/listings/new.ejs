@@ -3,42 +3,57 @@
         <div class="col-8 offset-2">
             <br>
             <h3>Create a New Listing</h3>
- 
-            <form method="POST" action="/listings" noalidate class="needs-validation">
+
+            <form method="POST" action="/listings" novalidate class="needs-validation">
                 <div class="mb-3">
-                    <lable for="title" class="form-label"> Title</lable>
+                    <label for="title" class="form-label"> Title</label>
                     <input name="listing[title]" placeholder="add a catchy file" type="text" class="form-control"
                         required />
+                    <div class="invalid-feedback">
+                        Please enter a valid title
+                    </div>
                 </div>
 
                 <div class="mb-3">
-                    <lable for="description" class="form-label"> Description</lable>
-                    <textarea name="listing[description]" class="form-control"></textarea>
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="listing[description]" placeholder="enter a short description" class="form-control"
+                        required></textarea>
+                    <div class="invalid-feedback">
+                        Please enter a short description
+                    </div>
                 </div>
 
+
                 <div class="mb-3">
-                    <lable for="image" class="form-label"> Image Link</lable>
+                    <label for="image" class="form-label"> Image Link</label>
                     <textarea name="listing[image]" placeholder="enter image URL/Link" class="form-control"></textarea>
                 </div>
 
                 <div class="row">
                     <div class="mb-3 col-md-4">
-                        <lable for="price" class="form-label"> Price</lable>
-                        <input name="listing[price]" placeholder="1200" type="text" class="form-control" required />
+                        <label for="price" class="form-label"> Price</label>
+                        <input name="listing[price]" placeholder="1200" class="form-control" required />
+                        <div class="invalid-feedback">
+                            Please enter a valid Price
+                        </div>
                     </div>
 
                     <div class="mb-3 col-md-8">
-                        <lable for="country" class="form-label"> Country</lable>
+                        <label for="country" class="form-label"> Country</label>
                         <input name="listing[country]" placeholder="India" type="text" class="form-control" required />
+                        <div class="invalid-feedback">
+                            Please enter the Country name
+                        </div>
                     </div>
-                </div>
+                    <div class="mb-3">
+                        <label for="location" class="form-label"> Location</label>
+                        <input name="listing[location]" placeholder="U.P , Delhi" type="text" class="form-control"
+                            required />
+                        <div class="invalid-feedback">
+                            Please enter the location
+                        </div>
+                    </div>
 
-                <div class="mb-3">
-                    <lable for="location" class="form-label"> Location</lable>
-                    <input name="listing[location]" placeholder="U.P , Delhi" type="text" class="form-control"
-                        required />
-                </div>
-
-                <br>
-                <button class="btn btn-dark add-btn">Add</button>
-                <br><br />
+                    <br>
+                    <button class="btn btn-dark add-btn">Add</button>
+                    <br><br />
