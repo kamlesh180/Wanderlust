@@ -1,0 +1,12 @@
+const Jai = require("joi");
+module.exports.listingSchema = Jai.object({
+    listing:Jai.object({
+        title:Jai.string().required,
+        description: Jai.string().required,
+        location:Jai.string().required,
+        country:Jai.string().required,
+        location:Jai.string().required,
+        price:Jai.string(),
+        image: Jai.string().allow("",null),
+    }).required
+});
