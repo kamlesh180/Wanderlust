@@ -7,7 +7,7 @@ module.exports.listingSchema = Jai.object({
         location:Jai.string().required(),
         price:Jai.string(),
         image: Jai.string().allow("",null),
-    }).required()
+    }).required(),
 });
 
 module.exports.reviewSchema = Jai.object({

@@ -72,8 +72,8 @@ app.get("/listings/new",(req,res) =>{
 //show route
 app.get ("/listings/:id" ,wrapAsync(async (req,res) => {
     let {id}=req.params;
-    const listing = await Listing.findById(id);
-    res.render("listings/show.ejs",{listing});
+    const listing = await Listing.findById(id).populate("reviews");
+    res.render("listings/show.ejs", { listing });
 })
 );
 
@@ -81,6 +81,12 @@ app.get ("/listings/:id" ,wrapAsync(async (req,res) => {
 app.post("/listings", 
     validateListing,
     wrapAsync(async(req,res,next) => {
+        let result = listingSchema.validate(req.body);
+        console.log(result);
+
+        if(result.error){
+            throw new ExpressError(400,result.error);
+        }
     const newListing = new Listing(req.body.listing);
     await newListing.save();
     res.redirect("/listings");
