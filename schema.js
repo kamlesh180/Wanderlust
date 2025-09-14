@@ -10,3 +10,11 @@ module.exports.listingSchema = Jai.object({
         image: Jai.string().allow("",null),
     }).required
 });
+
+module.exports.reviewSchema = Jai.object({
+    review :Jai.object({
+        rating:Jai.number().required().min(1).max(5),
+    comment: Jai.string().required(),
+    }).required(),
+
+});
