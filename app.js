@@ -55,7 +55,7 @@ throw new ExpressError(400,errMsg)
 } else {
     next();
 }
-}
+};
 
 //index route
 app.get("/listings", wrapAsync(async (req,res) => {
@@ -139,8 +139,8 @@ app.all('/*splat', (req, res, next) => {
 
 app.use((err,req,res,next) => {
     let { statusCode=500, message="Something went wrong" } = err;
-    res.status(statusCode).render("error.ejs",{message});
-    //res.status(statusCode).send(message);
+    // res.status(statusCode).render("error.ejs",{message});
+    res.status(statusCode).send(message);
   });
 
 app.listen(8080,()=> {
