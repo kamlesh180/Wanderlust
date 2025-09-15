@@ -49,7 +49,7 @@ throw new ExpressError(400,errMsg)
 const validateReview = (req,res,next) => {
    let {error} = reviewSchema.validate(req.body);
 if (error){
-    let errMsg = error.details.map((el) =>
+    let errMsg = error.details.map((el) =
     el.message).join (",");
 throw new ExpressError(400,errMsg)
 } else {
@@ -72,7 +72,7 @@ app.get("/listings/new",(req,res) =>{
 //show route
 app.get ("/listings/:id" ,wrapAsync(async (req,res) => {
     let {id}=req.params;
-    const listing = await Listing.findById(id);
+    const listing = await Listing.findById(id).populate("reviews");
     res.render("listings/show.ejs", { listing});
 })
 );
@@ -127,7 +127,8 @@ app.post("/listings/:id/reviews",validateReview, wrapAsync(async(req,res) => {
 
    await newReview.save();
    await listing.save();
-   res.redirect(`/listings/${listing._id}`);
+//    res.redirect(`/listings/${listing._id}`);
+res.send("Review added successfullt");
 }));
 
 
