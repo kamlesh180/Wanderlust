@@ -137,7 +137,7 @@ app.delete("/listings/:id/reviews/:reviewId",
     let {id,reviewId} = req.params;
     await Listing.findByIdAndUpdate(id, {$pull: {reviews: reviewId   }});
     await Review.findByIdAndDelete (reviewId);
-    res.redirect(`/lisings/${id}`);
+    res.redirect(`/listings/${id}`);
 })
 );
 
