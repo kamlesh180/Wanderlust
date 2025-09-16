@@ -1,26 +1,15 @@
 const express = require("express");
 const app = express();
 const users = require("./routes/user.js");
+const posts = require("./routes/post.js");
 
 app.get("/", (req,res) => {
     res.send("Hi,I am root");
 });
 
-app.use("/api", users);
+app.use("/users", users);
+app.use("/posts", posts);
 
-//Posts
-//Index
-app.get("/posts", (req,res) =>
-{
-    res.send("Get for posts");
+app.listien (3000,() => {
+    console.log("Server is running on port 3000");
 });
-//show 
-app.get("/posts/:id",(req,res) => {
-    res.send("Get for post id");
-});
-//post
-app.post("/posts", (req,res) => {
-    res.send("Post for posts");
-})
-
-
