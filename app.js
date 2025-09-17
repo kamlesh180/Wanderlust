@@ -8,6 +8,7 @@ const ExpressError = require("./utils/ExpressError.js");
 
 const listing = require ("./routes/listing.js");
 const reviews = require("./routes/review.js");
+const Listings = require("./models/listing.js");
  
 const MONGO_URL ="mongodb://127.0.0.1:27017/wanderlust";
 
