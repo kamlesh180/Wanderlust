@@ -26,8 +26,8 @@ app.get("/register",(req,res) => {
 });
 
 app.get("/hello",(req,res) => {
-   res.render("page.ejs",{name:req.session.name});
-})
+   res.render("page.ejs",{name:req.session.name,msg:req.flash("success")});
+});
 
 app.listen (3000, () => {
     console.log("Server is listeing to  3000");
