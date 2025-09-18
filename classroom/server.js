@@ -9,6 +9,7 @@ const sessionOptions = {
     resave:false,
     saveUninitialized:true,
 };
+
 app.use(session(sessionOptions));
 
 app.get("/register",(req,res) => {
@@ -18,8 +19,9 @@ app.get("/register",(req,res) => {
 });
 
 app.get("/hello",(req,res) => {
-    res.send(`hello ${req.session.name}`);
+    res.send(`hello, ${req.session.name}`);
 })
+
 app.listen (3000, () => {
     console.log("Server is listeing to  3000");
 });
