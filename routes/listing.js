@@ -41,20 +41,16 @@ router.get ("/:id" ,wrapAsync(async (req,res) => {
 router.post("/", 
     validateListing,
     wrapAsync(async(req,res,next) => {
-        let result = listingSchema.validate(req.body);
-        console.log(result);
-
-        if(result.error){
-            throw new ExpressError(400,result.error);
-        }
     const newListing = new Listing(req.body.listing);
     await newListing.save();
+    req.flash ("success","New Listing Created!");
     res.redirect("/listings");
 })
 );
 
 //edit route
-router.get("/:id/edit", wrapAsync(async (req,res) => {
+router.get("/:id/edit",
+     wrapAsync(async (req,res) => {
     let {id} = req.params;
     const listing = await Listing.findById(id);
     res.render("listings/edit.ejs" ,{listing});
