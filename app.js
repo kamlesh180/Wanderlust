@@ -16,6 +16,7 @@ const User = require("./models/user.js");
 const listingRouter = require ("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
+
  
 const MONGO_URL ="mongodb://127.0.0.1:27017/wanderlust";
 
@@ -73,10 +74,10 @@ app.use((req,res,next) => {
 //demo routes
 app.get("/demouser", async (req,res) => {
     let fakeUser = new User({
-        email: "kamlesh@gmail.com",
-        username: "kamlesh",
+        email: "kaml55esh@gmail.com",
+        username: "rajesh",
 });
-let registeredUser = await User.register(fakeUser,"rohit");
+let registeredUser = await User.register(fakeUser,"rohan12");
 res.send(registeredUser);
 });
 
