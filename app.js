@@ -8,8 +8,8 @@ const ExpressError = require("./utils/ExpressError.js");
 
 const session = require("express-session");
 const flash = require("connect-flash");
-const LocalStrategy = require("passport-local");
 const passport = require("passport");
+const LocalStrategy = require("passport-local");
 
 const User = require("./models/user.js");
 
@@ -93,10 +93,10 @@ app.all('/*splat', (req, res, next) => {
 });
 
 
-app.use((err,req,res,next) => {
+app.use((err,res) => {
     let { statusCode=500, message="Something went wrong" } = err;
     res.status(statusCode).render("error.ejs",{err});
-    // res.status(statusCode).send(message);
+    
   });
 
 app.listen(8080,()=> {
