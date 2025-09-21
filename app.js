@@ -72,14 +72,14 @@ app.use((req,res,next) => {
 });
 
 //demo routes
-app.get("/demouser", async (req,res) => {
-    let fakeUser = new User({
-        email: "kaml55esh@gmail.com",
-        username: "rajesh",
-});
-let registeredUser = await User.register(fakeUser,"rohan12");
-res.send(registeredUser);
-});
+// app.get("/demouser", async (req,res) => {
+//     let fakeUser = new User({
+//         email: "kaml55esh@gmail.com",
+//         username: "rajesh",
+// });
+// let registeredUser = await User.register(fakeUser,"rohan12");
+// res.send(registeredUser);
+// });
 
 
 app.use("/listings", listingRouter);
