@@ -12,9 +12,9 @@ const listingSchema= new Schema({
     description:String,
    image: {
    type:String,
-    default: "https://unsplash.com/photos/silhouette-of-a-hand-reaching-out-towards-light-D_BI7HXtd3M",
+    default: "https://plus.unsplash.com/premium_photo-1736856134183-d3d3845ce93f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3DM",
     set: (v) =>
-        v === "" ? "https://unsplash.com/photos/silhouette-of-a-hand-reaching-out-towards-light-D_BI7HXtd3M" : v,
+        !v === "" ? "https://plus.unsplash.com/premium_photo-1736856134183-d3d3845ce93f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" : v,
 },
     price:Number,
     location:String,
