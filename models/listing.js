@@ -10,11 +10,11 @@ const listingSchema= new Schema({
         required:true,
     },
     description:String,
-   image: {
-   type:String,
-    default: "https://plus.unsplash.com/premium_photo-1736856134183-d3d3845ce93f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3DM",
-    set: (v) =>
-        !v === "" ? "https://plus.unsplash.com/premium_photo-1736856134183-d3d3845ce93f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" : v,
+image: {
+  type: String,
+  default: "https://media.istockphoto.com/id/501155305/photo/ballet-dancer.jpg?s=612x612&w=is&k=20&c=0pY_5QS-0EQ3tAAYu7E4lGslnrWkEKWKEFabmZAPIfY=",
+  set: (v) =>
+    v === "" ? "https://media.istockphoto.com/id/501155305/photo/ballet-dancer.jpg?s=612x612&w=is&k=20&c=0pY_5QS-0EQ3tAAYu7E4lGslnrWkEKWKEFabmZAPIfY=" : v,
 },
     price:Number,
     location:String,
