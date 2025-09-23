@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const review = require("./review");
 const Schema = mongoose.Schema;
 const Review = require ("./review.js");
+const { types } = require("joi");
 
 const listingSchema= new Schema({
     title:{
@@ -10,10 +11,10 @@ const listingSchema= new Schema({
     },
     description:String,
    image: {
-    type: String,
-    default: "https://media.istockphoto.com/id/1127245421/photo/woman-hands-praying-for-blessing-from-god-on-sunset-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=Fbysb-YHuALb_Jyi4Q8Lw2QEVIFa3WSaPsvneGr7Q_8=",
+   type:String,
+    default: "https://unsplash.com/photos/silhouette-of-a-hand-reaching-out-towards-light-D_BI7HXtd3M",
     set: (v) =>
-        v === "" ? "https://media.istockphoto.com/id/1127245421/photo/woman-hands-praying-for-blessing-from-god-on-sunset-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=Fbysb-YHuALb_Jyi4Q8Lw2QEVIFa3WSaPsvneGr7Q_8=" : v,
+        v === "" ? "https://unsplash.com/photos/silhouette-of-a-hand-reaching-out-towards-light-D_BI7HXtd3M" : v,
 },
     price:Number,
     location:String,
@@ -22,8 +23,13 @@ const listingSchema= new Schema({
         {
             type: mongoose.Schema.Types.ObjectId,
             ref:"Review"
-        }
-    ]
+        },
+    ],
+    owner: {
+        type:Schema.Types.ObjectId,
+        ref:"User",
+    }, 
+    
 });
 listingSchema.post("findOneAndDelete", async(listing) => {
     if(listing){
