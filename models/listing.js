@@ -3,20 +3,20 @@ const review = require("./review");
 const Schema = mongoose.Schema;
 const Review = require ("./review.js");
 const { types } = require("joi");
-
 const listingSchema= new Schema({
     title:{
         type:String,
         required:true,
     },
     description:String,
+
 image: {
   type: String,
-  default: "https://media.istockphoto.com/id/501155305/photo/ballet-dancer.jpg?s=612x612&w=is&k=20&c=0pY_5QS-0EQ3tAAYu7E4lGslnrWkEKWKEFabmZAPIfY=",
-  set: (v) =>
-    v === "" ? "https://media.istockphoto.com/id/501155305/photo/ballet-dancer.jpg?s=612x612&w=is&k=20&c=0pY_5QS-0EQ3tAAYu7E4lGslnrWkEKWKEFabmZAPIfY=" : v,
+  default: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+  set: (v) => v === "" ? "https://images.unsplash.com/photo-1507525428034-b723cf961d3e" : v,
 },
-    price:Number,
+
+ price:Number,
     location:String,
     country:String,
     reviews: [
