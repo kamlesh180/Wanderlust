@@ -12,9 +12,10 @@ router.post("/",
     wrapAsync(async(req,res) => {
         console.log(req.params.id);
    let listing= await Listing.findById(req.params.id);
-   newReview.author = (req.body.review);
    let newReview = new Review(req.body.review);
-   listing.reviews.push(newReview._id);
+    newReview.author = (req.user._id);
+  
+   listing.reviews.push(newReview);
 
    await newReview.save();
    await listing.save();
