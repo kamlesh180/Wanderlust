@@ -1,5 +1,4 @@
-require('dotenv').config();
-const exp ress = require("express");
+const express = require("express");
 const router = express.Router();
 const wrapAsync = require("../utils/wrapAsync.js");
 const Listing = require("../models/listing.js");
