@@ -1,67 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tourism Explorer</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    body {
-      background-color: #f8f9fa;
-    }
-
-    .hero {
-      background: url('https://source.unsplash.com/1600x600/?travel') no-repeat center center;
-      background-size: cover;
-      height: 60vh;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-shadow: 2px 2px 4px #000;
-    }
-
-    .card img {
-      height: 200px;
-      object-fit: cover;
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Tourism Explorer</a>
-    </div>
-  </nav>
-
-  <section class="hero">
-    <h1>Discover Your Next Destination</h1>
-  </section>
-
-  <section class="container my-5">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://source.unsplash.com/400x200/?paris" class="card-img-top" alt="Paris">
-          <div class="card-body">
-            <h5 class="card-title">Paris</h5>
-            <p class="card-text">Romantic city of lights and culture.</p>
-            <a href="#" class="btn btn-primary">Explore</a>
-          </div>
-        </div>
-      </div>
-      <!-- Repeat for more destinations -->
-    </div>
-  </section>
-
-  <footer class="bg-dark text-white text-center py-3">
-    &copy; 2025 Tourism Explorer. All rights reserved.
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+  <div class="calculator">
+    <input type="text" id="display" disabled />
+    <div class="buttons">
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="appendValue('/')">÷</button>
+      <button onclick="appendValue('*')">×</button>
+      <button onclick="appendValue('-')">−</button>
+      <button onclick="appendValue('7')">7</button>
+      <button onclick="appendValue('8')">8</button>
+      <button onclick="appendValue('9')">9</button>
+      <button onclick="appendValue('+')">+</button>
+      <button onclick="appendValue('4')">4</button>
+      <button onclick="appendValue('5')">5</button>
+      <button onclick="appendValue('6')">6</button>
+      <button onclick="calculate()">=</button>
+      <button onclick="appendValue('1')">1</button>
+      <button onclick="appendValue('2')">2</button>
+      <button onclick="appendValue('3')">3
