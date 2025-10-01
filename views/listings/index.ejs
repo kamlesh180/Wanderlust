@@ -100,16 +100,21 @@
             <% } %>
 
                 <script>
-                    let taxSwitch = document.getElementById("switchCheckDefault"); // ✅ corrected ID
+                    let taxSwitch = document.getElementById("switchCheckDefault");
                     taxSwitch.addEventListener("click", () => {
-                        let taxInfo = document.getElementsByClassName("tax-info");
-                        for (let info of taxInfo) {
-                            if (info.style.display != "inline") {
-                                info.style.display = "inline";
+                        let listings = document.querySelectorAll(".card-text");
+                        listings.forEach(card => {
+                            let priceText = card.innerHTML;
+                            let basePrice = parseInt(priceText.match(/₹\s?([\d,]+)/)[1].replace(/,/g, ""));
+                            let taxInfo = card.querySelector(".tax-info");
+
+                            if (taxSwitch.checked) {
+                                let total = Math.round(basePrice * 1.18);
+                                card.innerHTML = `<b>${card.querySelector("b").innerText}</b><br>₹ ${total.toLocaleString("en-IN")}/night <i class="tax-info"> (incl. 18% GST)</i>`;
                             } else {
-                                info.style.display = "none";
+                                card.innerHTML = `<b>${card.querySelector("b").innerText}</b><br>₹ ${basePrice.toLocaleString("en-IN")}/night <i class="tax-info" style="display:none;"> &nbsp;+18% GST</i>`;
                             }
-                        }
+                        });
                     });
                 </script>
     </div>
