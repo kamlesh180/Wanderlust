@@ -1,4 +1,4 @@
-if(process.env.NODE_ENV != "prodution"){
+if(process.env.NODE_ENV != "production"){
    require('dotenv').config();
 }
 // console.log(process.env.SECRET);
@@ -25,6 +25,7 @@ const userRouter = require("./routes/user.js");
 
  
 const MONGO_URL ="mongodb://127.0.0.1:27017/wanderlust";
+// const dbUrl = process.env.ATLASDB_URL;
 
 main() 
 .then (()=> {
