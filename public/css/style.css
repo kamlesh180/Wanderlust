@@ -98,3 +98,25 @@ impor .card-body {
   padding-left: 0;
   padding-right: 0;
 }
+.search-btn {
+  background-color: #fe424d;
+  color: white;
+  border-radius: 25px;
+  padding: 0 1rem 0;
+}
+
+.search-btn :hover {
+  background-color: #fe424d;
+  color: white;
+}
+
+.search-btn i {
+  display: inline;
+  margin-right: 0.5;
+}
+
+.search-inp {
+  border-radius: 25px;
+  padding: 0.5rem 3rem 0.5rem 3rem;
+  font-size: 1rem;
+}

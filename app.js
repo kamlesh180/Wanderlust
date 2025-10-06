@@ -92,8 +92,6 @@ app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/",userRouter);
 
-
-
 //Middleware error handling
 app.all('/*splat', (req, res, next) => {
   next(new ExpressError(404, "Page not found"));
