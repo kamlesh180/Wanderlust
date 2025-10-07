@@ -18,3 +18,13 @@
 );
   });
 })();
+//for auto hide flash in 3 second
+document.addEventListener("DOMContentLoaded", () => {
+  const alerts = document.querySelectorAll(".alert");
+  alerts.forEach(alert => {
+    setTimeout(() => {
+      const alertInstance = bootstrap.Alert.getOrCreateInstance(alert);
+      alertInstance.close();
+    }, 3000);
+  });
+});

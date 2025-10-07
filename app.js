@@ -54,7 +54,7 @@ const store = MongoStore.create({
     touchAfter:24*3600,
 });
 
-store.on("error",() => {
+store.on("error",(err) => {
     console.log("ERROR IN MNGO SESSION STORE",err);
 });
 
@@ -80,20 +80,19 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.use((req,res,next) => {
-    res.locals.success = req.flash("success");
-        res.locals.error = req.flash("error");
-        res.locals.currUser= req.user;
-    next();
+app.use((req, res, next) => {
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
+  res.locals.currUser = req.user;
+  next();
 });
 
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
-app.use("/",userRouter);
+app.use("/", userRouter);
 
-//Middleware error handling
-app.all('/*splat', (req, res, next) => {
-  next(new ExpressError(404, "Page not found"));
+app.all("/*splat", (req, res, next) => {
+  next(new ExpressError(404, "Page Not Found"));
 });
 
 
