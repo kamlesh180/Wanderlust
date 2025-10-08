@@ -53,13 +53,24 @@ body {
   border: none !important;
   margin-bottom: 2rem;
 }
+.card-img-top {
+  width: 100% !important;
+  height: 250px !important;
+  object-fit: cover !important;
+  border-radius: 1rem !important;
+}
 
+@media (min-width: 768px) {
+  .card-img-top {
+    height: 300px !important;
+  }
+}
 .card-img-top {
   border-radius: 1rem !important;
   width: 100% !important;
   object-fit: cover !important;
 }
-impor .card-body {
+.card-body {
   padding: o !important;
 }
 
