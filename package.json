@@ -1,4 +1,8 @@
 {
+  
+    "engines": {
+      "node": "v22.18.0"
+    },
   "name": "project",
   "version": "1.0.0",
   "description": "",
