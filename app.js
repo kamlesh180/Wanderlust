@@ -34,9 +34,6 @@ main()
     console.log(err)
     
 });
-app.get('/', (req, res) => {
-  res.send('🚀 Wanderlust backend is live!');
-});
 async function main(){
     await mongoose.connect(dbUrl);
 
@@ -94,6 +91,10 @@ app.use((req, res, next) => {
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
+
+app.get('/', (req, res) => {
+  res.send('🚀 Wanderlust backend is live!');
+});
 
 app.all("/*splat", (req, res, next) => {
   next(new ExpressError(404, "Page Not Found"));
