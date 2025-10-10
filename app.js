@@ -92,6 +92,16 @@ app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
+app.get("/", async (req, res) => {
+  try {
+    const allListings = await Listing.find({});
+    res.render("listings/index.ejs", { allListings }); // ✅ Pass it to EJS
+  } catch (err) {
+    console.log("Error fetching listings:", err);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
 app.all("/*splat", (req, res, next) => {
   next(new ExpressError(404, "Page Not Found"));
 });
