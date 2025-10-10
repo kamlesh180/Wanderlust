@@ -2,7 +2,7 @@ if(process.env.NODE_ENV != "production"){
    require('dotenv').config();
 }
 // console.log(process.env.SECRET);
-
+const Listing = require("./models/listing.js");
 
 const express = require("express");
 const app = express();
@@ -92,9 +92,6 @@ app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
-app.get("/", (req, res) => {
-  res.render("listings/index.ejs"); 
-});
 app.all("/*splat", (req, res, next) => {
   next(new ExpressError(404, "Page Not Found"));
 });
