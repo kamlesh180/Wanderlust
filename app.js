@@ -92,7 +92,7 @@ app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
-app.get("/", async (req, res) => {
+app.get("/listings", async (req, res) => {
   try {
     const allListings = await Listing.find({});
     res.render("listings/index.ejs", { allListings }); // ✅ Pass it to EJS
